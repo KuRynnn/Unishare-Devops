@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DaftarBeasiswaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -109,3 +110,7 @@ Route::controller(BeasiswaController::class)->group(function(){
     Route::get('/admin/beasiswa/add', 'showCreateForm')->name('create-beasiswa');
 });
 
+
+
+Route::get('/FormPendaftaran', [DaftarBeasiswaController::class, 'showForm'])->name('FormPendaftaranBeasiswa');
+Route::post('/submit-pendaftaran', [DaftarBeasiswaController::class, 'submitForm'])->name('submit-pendaftaran');
