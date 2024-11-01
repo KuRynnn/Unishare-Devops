@@ -1,0 +1,382 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f6f7ff;
+}
+
+.page-title {
+    background-color: #121415;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.services {
+    margin-bottom: 30px;
+    color: #252422;
+}
+
+.about {
+    margin-bottom: 30px;
+    color: #252422;
+}
+
+.footer {
+    background-color: #121415;
+    color: #f6f7ff;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.footer img {
+    display: flex;
+    align-items: start;
+    width: 160px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.footer p {
+    color: #7c7974;
+    font-size: 14px;
+}
+
+.footer li {
+    color: #7c7974;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer ul li::marker {
+    color: #f75600;
+}
+
+.footer-line {
+    border-top-width: 2px;
+    border-top-style: outset;
+    border-color: #403d39;
+    margin-top: 50px;
+}
+
+.footer-line p {
+    color: #f6f7ff;
+}
+
+.navbar-login {
+    background-color: #121415 !important;
+    color: #f75600;
+}
+
+.container a {
+    color: #121415;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.4 s;
+}
+
+.nav-link:hover,
+.container a:hover {
+    color: #f75600;
+}
+
+.nav-item {
+    padding-left: 20px;
+}
+
+.text-primary {
+    color: #f75600 !important;
+}
+
+.content-box {
+    margin: 15% 8%;
+    max-width: 700px;
+    text-align: left;
+}
+
+.content-box-sign {
+    margin: 5% 8%;
+    max-width: 700px;
+    text-align: left;
+}
+
+.content-box h1,
+.content-box-sign h1 {
+    font-size: 72px;
+    color: #f75600;
+}
+
+.content-box h3 {
+    color: #f6f7ff;
+}
+
+.content-box p {
+    font-size: 18px;
+    color: #f6f7ff;
+}
+
+.btn-primary {
+    background-color: #f75600;
+    border-color: #f75600;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: #f75600;
+    border-width: 2px;
+    color: #f75600;
+}
+
+.btn-custom1 {
+    background-color: #f75600;
+    border-color: #f75600;
+    border-radius: 20px;
+    color: #f6f7ff;
+}
+
+.btn-custom1:hover {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: white;
+    border-color: #f75600;
+    border-width: 2px;
+    color: #f75600;
+}
+
+#icon-list {
+    list-style: url("assets/img/check.svg") !important;
+    text-align: start;
+    /* Additional styling for the list can be added here */
+}
+
+#icon-list li {
+    margin-left: 20px; /* Adjust the margin as needed to align text with the icon */
+}
+
+#content-box {
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: #121415;
+}
+
+.img-title {
+    max-width: 100%;
+}
+
+.img-thumb {
+    display: flex;
+    align-items: start;
+    padding: 30px;
+    width: 70px;
+    height: auto;
+    max-width: 100%;
+    background-color: #252422;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.img-thumb2 {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 30px;
+    width: 60px;
+    height: auto;
+    max-width: 100%;
+    background-color: #252422;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.form-label,
+.form-text,
+.form-check-label {
+    color: #121415;
+}
+
+#usernameHelp {
+    color: #7c7974;
+}
+
+.card-atas {
+    background-color: #121415;
+    color: #f6f7ff;
+}
+.card,
+.list-group-item {
+    border-style: none;
+    text-align: left;
+}
+
+.card-body {
+    text-decoration: none;
+}
+
+.banner {
+    height: 420px;
+    background-color: #252422;
+}
+.second-navbar {
+    background-color: white;
+}
+
+.second-navbar a {
+    color: #252422;
+}
+.search-bar {
+    display: flex;
+    align-items: self-end;
+    width: 100%;
+}
+.list-group-item input[type="checkbox"]:checked {
+    background-color: #f75600;
+    border-color: #f75600;
+}
+
+.filter-box {
+    background-color: white;
+    height: fit-content;
+    border-radius: 15px;
+}
+
+#header-thumbnail {
+    margin-top: 100px;
+    margin-left: 90px;
+}
+
+#title-thumbnail {
+    margin-top: 130px;
+    margin-right: 133px;
+    color: #f6f7ff;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+#text-thumbnail {
+    color: #f6f7ff;
+    font-weight: normal;
+    margin: 0;
+}
+
+#navbar-item {
+    margin-left: 15px;
+    font-weight: 500;
+    color: #252422;
+}
+
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+    padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+    padding: 0;
+}
+
+.post-container {
+    background-color: white;
+    max-width: 1000px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 8px 30px rgba(37, 36, 34, 0.07));
+}
+
+.organizer {
+    display: flex;
+    align-items: center;
+    color: #252422;
+}
+
+.organizer img {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.organizer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.organizer-info p {
+    margin: 0; /* Remove default margin to avoid extra spacing */
+}
+
+.tags {
+    display: flex;
+    align-items: start;
+}
+.thumbnail-container {
+    max-width: 900px; /* Set the desired width for your thumbnail */
+    max-height: 400px; /* Set the desired height for your thumbnail */
+    overflow: hidden;
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-post-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

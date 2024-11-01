@@ -1,0 +1,203 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f6f7ff !important;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: #252422;
+    color: #7c7974;
+    float: left;
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+}
+
+.sidebar a {
+    color: #f75600;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+.sidebar a:focus {
+    background-color: #1f1f1e;
+    border-radius: 12px;
+    padding: 10px;
+    color: #f75600;
+    font-weight: bold;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    border-bottom: 1px solid #403d39;
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-dashboard {
+    background-color: #f75600;
+    border: none;
+    flex-shrink: 0;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 20px;
+}
+
+.btn-dashboard:hover {
+    background-color: #f6f7ff;
+    color: #252422;
+}
+
+.btn-logout {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background: #cc2a2a;
+    border-radius: 6px;
+    color: #f6f7ff;
+    border: none;
+}
+
+.btn-logout:hover {
+    background-color: white;
+    color: #252422;
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.menu {
+    margin-top: 30px;
+    padding-left: 0.49px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12.36px;
+    display: inline-flex;
+}
+
+.menu aside {
+    width: 20px;
+    height: 1px;
+    border: 1px #f75600 solid;
+}
+
+.menu h6 {
+    color: #f75600;
+    font-weight: 400;
+}
+
+.submenu {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #7c7974;
+    margin-left: 10px;
+}
+
+.submenu:hover {
+    color: #f75600;
+}
+
+.content {
+    padding-left: 200px; /* Add some padding to the content area */
+}
+
+.user-table {
+    padding-left: 250px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-form {
+    background-color: white;
+    box-shadow: 0px 8px 30px 0px rgba(37, 36, 34, 0.07);
+    border-radius: 20px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    text-decoration: none;
+}
+
+#delete-icon {
+    color: red;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .dashboard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar {
+        min-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .dashboard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-dashboard {
+        width: 100px;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 20px;
+    }
+
+    .sidebar {
+        min-width: 150px;
+        overflow-y: visible;
+    }
+
+    .logout {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
