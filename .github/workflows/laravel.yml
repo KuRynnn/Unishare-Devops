@@ -42,12 +42,8 @@ jobs:
         echo "DB_USERNAME=root" >> .env
         echo "DB_PASSWORD=password" >> .env
 
-    - name: Update Composer Dependencies
-      run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      
     - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-
+      run: composer install --ignore-platform-reqs -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
     - name: Generate key
       run: php artisan key:generate
