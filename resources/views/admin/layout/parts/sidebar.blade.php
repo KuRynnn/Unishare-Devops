@@ -98,6 +98,28 @@
         </a>
       </div>
       <br>
+
+      {{-- MENU 4: Notifications --}}
+      <div class="menu">
+          <aside></aside>
+          <h6>Notifications</h6>
+      </div> <br>
+
+      <div class="btn-group submenu ms-4 ps-2 mt-3 mb-3">
+        <span class="material-symbols-outlined">notifications</span>
+        <a href="{{ route('admin.notifications') }}" 
+            onmouseover="this.style.color='#f75600'" 
+            onmouseout="this.style.color='#7c7974'">Manage Notifications
+        </a>
+    </div>
+
+      <div class="btn-group submenu ms-4 ps-2 mb-3">
+          <span class="material-symbols-outlined">notification_add</span>
+          <a href="{{ route('admin.notifications.create') }}"
+              onmouseover="this.style.color='#f75600'" 
+              onmouseout="this.style.color='#7c7974'">Create Notification
+          </a>
+      </div>
       
       <a class="logout" href="">
         <button class="btn-logout mt-5">
