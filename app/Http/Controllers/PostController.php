@@ -36,9 +36,9 @@ class PostController extends Controller
             'kategori' => 'required',
             'tema' => 'required',
             'content' => 'required',
-            'url_event' => 'required',
-            'guidebook' => 'file', // Add file validation rule
-            'banner_img' => 'image|file|max:5120', // Max uploaded img = 5MB
+            'url_event' => 'nullable|string',
+            'guidebook' => 'file', 
+            'banner_img' => 'image|file|max:5120',
         ]);
 
         // Handle file uploads

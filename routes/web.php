@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KarirPostController;
 use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventController;
 
 
 /*
@@ -25,6 +26,10 @@ use App\Http\Controllers\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/daftar-acara', [EventController::class, 'showForm'])->name('event.form');
+Route::post('/daftar-acara', [EventController::class, 'register'])->name('event.register');
+
+
 
 Route::get('/', function () {
     return view('landing');
