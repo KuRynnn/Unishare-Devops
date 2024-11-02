@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DaftarBeasiswa;
+use App\Models\Beasiswa;
 
 class DaftarBeasiswaController extends Controller
 {
-    public function showForm()
-    {
-        return view('FormPendaftaranBeasiswa');
+    public function showForm(Beasiswa $id){
+        $id->formatted_date = $id->updated_at->format('d F Y');
+        return view('FormPendaftaranBeasiswa', ["post" => $id]);
     }
+
+
 
     public function submitForm(Request $request)
     {

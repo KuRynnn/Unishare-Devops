@@ -112,5 +112,5 @@ Route::controller(BeasiswaController::class)->group(function(){
 
 
 
-Route::get('/FormPendaftaran', [DaftarBeasiswaController::class, 'showForm'])->name('FormPendaftaranBeasiswa');
+Route::get('/beasiswa/{id}/FormPendaftaran', [DaftarBeasiswaController::class, 'showForm'])->name('FormPendaftaranBeasiswa');
 Route::post('/submit-pendaftaran', [DaftarBeasiswaController::class, 'submitForm'])->name('submit-pendaftaran');

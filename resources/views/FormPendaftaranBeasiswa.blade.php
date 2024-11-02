@@ -6,7 +6,8 @@
     <title>Form Pendaftaran Beasiswa</title>
 </head>
 <body>
-    <h2>Pendaftaran Beasiswa - Pandawara Go To Campus</h2>
+    <!-- Menampilkan judul beasiswa -->
+    <h2>Pendaftaran Beasiswa - {{ $post->title }}</h2>
 
     @if (session('success'))
         <p>{{ session('success') }}</p>

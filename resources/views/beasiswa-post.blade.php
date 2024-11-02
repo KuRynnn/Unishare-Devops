@@ -39,7 +39,7 @@
     {{-- Attachment --}}
     <h5 class="mt-5 mb-3">Attachment</h5>
     <div class="tags mt-2">
-      <a href="{{ route('FormPendaftaranBeasiswa') }}">
+      <a href="{{ route('FormPendaftaranBeasiswa',['id'=>$post->id]) }}">
         <button type="button" class="btn btn-primary me-2" style="width: 200px">Link Pendaftaran</button>
       </a>
 
