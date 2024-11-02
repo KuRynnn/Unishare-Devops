@@ -2,10 +2,9 @@ name: Laravel
 
 on:
   push:
-    branches: [ "main", "Hilmi" ]
+    branches: [ "main", "Hilmi" ]  
   pull_request:
-    branches: [ "main", "Hilmi" ]
-
+    branches: [ "main", "Hilmi" ]  
 jobs:
   laravel-tests:
 
@@ -60,3 +59,16 @@ jobs:
           DB_USERNAME: root
           DB_PASSWORD: ""
         run: php artisan test
+
+      # SonarCloud Analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=KuRynnn_Unishare-Devops
+            -Dsonar.organization=kurynnn
+            -Dsonar.sources=.
+            -Dsonar.branch.name=${{ github.ref_name }}
