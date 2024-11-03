@@ -60,11 +60,8 @@ jobs:
           DB_PORT: 3306
           DB_DATABASE: unishare
           DB_USERNAME: root
-          DB_PASSWORD: null
+          DB_PASSWORD: admin
         run: php artisan migrate
-
-      - name: Run PHPUnit tests with coverage
-        run: vendor/bin/phpunit --coverage-clover=coverage.xml
-
-      - name: Fix code coverage paths
-        run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace@g' coverage.xml
+        
+      - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
+        run: php artisan test
