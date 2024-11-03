@@ -26,10 +26,10 @@ class EventController extends Controller
 
         
         Registration::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'event_origin' => $request->event_origin,
+            'nama' => $request->input('nama'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'event_origin' => $request->input('event_origin'),
         ]);
 
         return redirect()->route('event.form')->with('success', 'Pendaftaran berhasil!');
