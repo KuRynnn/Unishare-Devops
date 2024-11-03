@@ -65,5 +65,11 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FAHRYAN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FAHRYAN}}  
+        with:
+          args: >
+            -Dsonar.projectKey=KuRynnn_Unishare-Devops
+            -Dsonar.organization=kurynnn
+            -Dsonar.sources=.  
+            -Dsonar.branch.name=Ghaza
