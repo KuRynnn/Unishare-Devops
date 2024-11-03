@@ -43,6 +43,15 @@ jobs:
 
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Copy .env
+        run: cp .env.example .env
+      
+      - name: Configure testing database
+        run: |
+            php artisan config:clear
+            php artisan config:cache
+            php artisan migrate --env=testing
+
 
       - name: Generate key
         run: php artisan key:generate
