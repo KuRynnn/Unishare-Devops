@@ -1,4 +1,4 @@
-name: Laravel
+name: Laravel CI
 
 on:
   push:
@@ -22,11 +22,13 @@ jobs:
           - 3306:3306
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: '8.2'
 
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -50,6 +52,11 @@ jobs:
         run: |
           mkdir -p database
           touch database/database.sqlite
+      - name: Install PHP Extensions
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y php-mbstring php-mysql
+
 
       - name: Run tests
         env:
@@ -60,3 +67,15 @@ jobs:
           DB_USERNAME: root
           DB_PASSWORD: ""
         run: php artisan test
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FAHRYAN}}  
+        with:
+          args: >
+            -Dsonar.projectKey=KuRynnn_Unishare-Devops
+            -Dsonar.organization=kurynnn
+            -Dsonar.sources=.  
+            -Dsonar.branch.name=Hilmi  
