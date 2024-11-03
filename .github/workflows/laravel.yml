@@ -66,11 +66,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_HILMI }}  
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-        with:
-          args: >
-            -Dsonar.projectKey=KuRynnn_Unishare-Devops
-            -Dsonar.organization=kurynnn
-            -Dsonar.sources=.
-            -Dsonar.branch.name=${{ github.Hilmi}}  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_HILMI }}
