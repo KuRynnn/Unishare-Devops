@@ -9,14 +9,15 @@ class EventControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function showForm()
+    /** @test */
+    public function it_displays_the_event_registration_form()
     {
         $response = $this->get(route('event.form'));
-    
-        // Assert the response is a view
+        
         $response->assertStatus(200);
-        $response->assertViewIs('pendaftaran-event'); // Update this to match the view file name
+        $response->assertViewIs('pendaftaran-event'); 
     }
+
     /** @test */
     public function it_requires_all_fields_to_register()
     {
