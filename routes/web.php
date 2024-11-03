@@ -107,5 +107,8 @@ Route::controller(BeasiswaController::class)->group(function(){
     Route::view('admin/beasiswa', 'admin.admin-karir');
     Route::post('/admin/beasiswa/add', 'storeNewPost');
     Route::get('/admin/beasiswa/add', 'showCreateForm')->name('create-beasiswa');
+    Route::get('/admin/beasiswa', 'index')->name('admin-beasiswa');
+    Route::get('/post/{id}/edit', 'showPostId')->name('edit-beasiswa'); // Tampilkan form edit
+    Route::post('/post/{id}/updatebea', 'updatePost')->name('update-beasiswa'); // Proses update data
+    Route::get('/delete/post/{id}', 'deletePost')->name('delete-beasiswa');
 });
-

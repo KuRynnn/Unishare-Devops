@@ -55,20 +55,38 @@ class BeasiswaController extends Controller
         return view('beasiswa-post', ["post" => $id]);
     }
 
-    // public function showPostId($id){
-    //     $data = Post::find($id);
-    //     return view('admin.update-post', compact('data'));
-    // }
+    public function showPostId($id) {
+        $data = Beasiswa::findOrFail($id); // Menemukan postingan berdasarkan ID
+        return view('admin.update-beasiswa', compact('data')); // Tampilkan form edit dengan data beasiswa
+    }
     
-    // public function deletePost($id){
-    //     $data = Post::find($id);
-    //     $data -> delete();
-    //     return redirect()->route('admin');
-    // }
-
-    // public function updatePost(Request $request, $id){
-    //     $data =  Post::find($id);
-    //     $data -> update($request->all());
-    //     return redirect()->route('admin');
-    // }
+    public function updatePost(Request $request, $id) {
+        $data = Beasiswa::findOrFail($id); // Menemukan postingan yang akan diperbarui
+        
+        // Validasi input yang diterima dari form update
+        $incomingFields = $request->validate([
+            'title' => 'required',
+            'jenis_beasiswa' => 'required',
+            'due_date_beasiswa' => 'required',
+            'penyelenggara_beasiswa' => 'required',
+            'deskripsi_beasiswa' => 'required',
+            'beasiswa_img' => 'image|file|max:5120',
+            'beasiswa_url' => 'required'
+        ]);
+    
+        // Jika ada gambar baru yang diunggah, update gambar
+        if ($request->hasFile('beasiswa_img')) {
+            $incomingFields['beasiswa_img'] = $request->file('beasiswa_img')->store('banners', 'public');
+        }
+    
+        $data->update($incomingFields); // Update data beasiswa
+        return redirect()->route('admin')->with('success', 'Beasiswa updated successfully');
+    }
+    
+    public function deletePost($id) {
+        $data = Beasiswa::findOrFail($id); // Menemukan postingan yang akan dihapus
+        $data->delete(); // Menghapus data beasiswa
+        return redirect()->route('admin')->with('success', 'Beasiswa deleted successfully');
+    }
+    
 }

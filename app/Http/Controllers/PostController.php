@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\KarirPost;
+use App\Models\Beasiswa;
 
 class PostController extends Controller
 {
@@ -14,7 +16,14 @@ class PostController extends Controller
     }
 
     public function showAdminPage(){
-        return view('admin.admin-dashboard', ["data" => Post::all()]);
+        $dataKarirPost = KarirPost::all();
+        $dataPost = Post::all();
+        $dataBeasiswa = Beasiswa::all();
+        return view('admin.admin-dashboard', [
+            'dataKarirPost' => $dataKarirPost,
+            'dataPost' => $dataPost,
+            'dataBeasiswa' => $dataBeasiswa,
+        ]);
     }
 
     public function showCreateForm()
