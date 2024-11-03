@@ -54,6 +54,15 @@ jobs:
           DB_PASSWORD: null
         run: |
           php artisan migrate
-          mysql -h 127.0.0.1 -u root unishare -e "INSERT INTO admin (admin_id, username, email, password, nama, profile_pic, created_at, updated_at) VALUES ('1', 'admin', 'admin@example.com', 'admin', 'Administrator', 'path/to/profile_pic.jpg', NOW(), NOW());"
-      - name: Clear Config
-        run: php artisan config:clear
+         
+      - name: Run PHPUnit tests with coverage
+        run: vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      - name: Fix code coverage paths
+        run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace@g' coverage.xml
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FAHRYAN }}
