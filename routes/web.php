@@ -94,11 +94,18 @@ Route::controller(KarirPostController::class)->group(function(){
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::controller(KarirPostController::class)->group(function(){
-        Route::view('admin/karir', 'admin.admin-karir');
-        Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
-        Route::post('/admin/karir/add', 'storeNewPost');
+    Route::middleware(['auth'])->group(function () {
+        Route::controller(KarirPostController::class)->group(function () {
+            Route::view('admin/karir', 'admin.admin-karir');
+            Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
+            Route::post('/admin/karir/add', 'storeNewPost');
+            Route::get('/admin/karir/show', 'showKarirPosts')->name('show-karir-posts');
+            Route::get('/karir-post/{id}', 'showPostId');
+            Route::post('/update/karir-post/{id}', 'updatePost');
+            Route::get('/delete/karir-post/{id}', 'deletePost');
+        });
     });
+    
 });
 
 Route::controller(BeasiswaController::class)->group(function(){

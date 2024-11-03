@@ -7,24 +7,25 @@ use App\Models\KarirPost;
 
 class KarirPostController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $data = KarirPost::latest()->filter(request(['search']));
-    
+
         if ($request->has('theme')) {
             $themes = $request->theme;
             $data->whereIn('tema', $themes);
         }
-    
+
         if ($request->has('category')) {
             $category = $request->category;
             $data->where('kategori', $category);
         }
-    
+
         $data = $data->paginate(2);
-    
+
         return view('karir', compact('data'));
     }
-    
+
 
     public function showCreateForm()
     {
@@ -50,7 +51,7 @@ class KarirPostController extends Controller
             'guidebook' => 'file', // Add file validation rule
             'banner_img' => 'image|file|max:5120', // Max uploaded img = 5MB
         ]);
-         
+
         // TO DO : INPUT FILE
         if ($request->hasFile('guidebook')) {
             $incomingFields['guidebook'] = $request->file('guidebook')->store('guidebooks', 'public');
@@ -62,13 +63,38 @@ class KarirPostController extends Controller
         $incomingFields['admin_id'] = $adminId;
 
         KarirPost::create($incomingFields);
-        return redirect('/admin');
+        return redirect('/show-karir-posts');
     }
 
 
-    public function viewPost(KarirPost $id) {
+    public function viewPost(KarirPost $id)
+    {
         $id->formatted_date = $id->updated_at->format('d F Y');
         return view('karir-post', ["post" => $id]);
     }
-    
+
+    public function showKarirPosts()
+    {
+        return view('admin.admin-show-karir-post', ["data" => KarirPost::all()]);
+    }
+
+    public function showPostId($id)
+    {
+        $data = KarirPost::find($id);
+        return view('admin.update-karir-post', compact('data'));
+    }
+
+    public function deletePost($id)
+    {
+        $data = KarirPost::find($id);
+        $data->delete();
+        return redirect()->route('show-karir-posts');
+    }
+
+    public function updatePost(Request $request, $id)
+    {
+        $data = KarirPost::find($id);
+        $data->update($request->all());
+        return redirect()->route('show-karir-posts');
+    }
 }
