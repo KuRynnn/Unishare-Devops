@@ -60,7 +60,6 @@ jobs:
           DB_PORT: 3306
           DB_DATABASE: unishare
           DB_USERNAME: root
-          DB_PASSWORD: admin
         run: php artisan migrate
         
       - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
