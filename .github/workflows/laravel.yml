@@ -78,4 +78,4 @@ jobs:
             -Dsonar.projectKey=KuRynnn_Unishare-Devops
             -Dsonar.organization=kurynnn
             -Dsonar.sources=.  
-            -Dsonar.branch.name=Nagiff 
+            -Dsonar.branch.name=farhann 
