@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KarirPostController;
 use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DaftarKarir;
+
 
 
 /*
@@ -109,3 +111,5 @@ Route::controller(BeasiswaController::class)->group(function(){
     Route::get('/admin/beasiswa/add', 'showCreateForm')->name('create-beasiswa');
 });
 
+Route::get('/karir/{karir_post_id}/FormPendaftaran', [DaftarKarir::class, 'showForm'])->name('formdaftarkarir');
+Route::post('/submit-pendaftaran', [DaftarKarir::class, 'submitForm'])->name('submit-pendaftaran');

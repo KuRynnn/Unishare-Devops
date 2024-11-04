@@ -44,7 +44,7 @@
           {{-- Attachment --}}
           <h5 class="mt-5 mb-3">Attachment</h5>
           <div class="tags mt-2">
-            <a href="{{$post -> url_event}}">
+            <a href="{{ route('formdaftarkarir', ['karir_post_id'=>$post->karir_post_id]) }}">
               <button type="button" class="btn btn-custom1 me-2" style="width: 200px">Link Pendaftaran</button>
             </a>
             
